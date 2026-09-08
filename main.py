@@ -41,13 +41,18 @@ class Main(CTk.CTk):
         self.title("D&D 2024 Character Sheet")
         self.geometry("100x100")
 
-        self.char_class = "Barbarian"
+        self.char_class = ["Barbarian"]
         self.char_subclass = None
         self.species = "Human"
         self.background = "Acolyte"
         self.level = 1
-        
+        self.experience = 0
+        self.class_level = [1]
+        self.max_hp = 13
+        self.proficiency_bonus = 2
+        self.save_proficencies = []
         self.stats = [15, 14, 13, 12, 10, 8]
+        self.skills = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 
 sheet = Main()
 sheet.mainloop()
