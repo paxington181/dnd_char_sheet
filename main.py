@@ -2,37 +2,37 @@ import customtkinter as CTk
 import CTkToolTip as CTkTT
 from PIL import Image
 
-class spells_frame(CTk.Frame):
-    def __init__(self):
-        super().__init__()
+class spells_frame(CTk.CTkFrame):
+    def __init__(self, master, char_stats, caster_stats, proficiency_bonus, caster_level, prepared_spells, char_level):
+        super().__init__(master)
 
-class inventory_frame(CTk.Frame):
-    def __init__(self):
-        super().__init__()
+class inventory_frame(CTk.CTkFrame):
+    def __init__(self, master, char_stats, equipment):
+        super().__init__(master)
 
-class money_frame(CTk.Frame):
-    def __init__(self):
-        super().__init__()
+class money_frame(CTk.CTkFrame):
+    def __init__(self, master, money):
+        super().__init__(master)
 
-class other_abilities(CTk.Frame):
-    def __init__(self):
-        super().__init__()
+class other_abilities(CTk.CTkFrame):
+    def __init__(self, master):
+        super().__init__(master)
 
-class class_abilities(CTk.Frame):
-    def __init__(self):
-        super().__init__()
+class class_abilities(CTk.CTkFrame):
+    def __init__(self, master, char_level, char_class, class_level):
+        super().__init__(master)
 
-class feats_frame(CTk.Frame):
-    def __init__(self):
-        super().__init__()
+class feats_frame(CTk.CTkFrame):
+    def __init__(self, master, feats):
+        super().__init__(master)
 
-class stat_frame(CTk.Frame):
-    def __init__(self):
-        super().__init__()        
+class stat_frame(CTk.CTkFrame):
+    def __init__(self, master, ):
+        super().__init__(master)        
 
-class class_frame(CTk.Frame):
-    def __init__(self):
-        super().__init__()
+class class_frame(CTk.CTkFrame):
+    def __init__(self, master):
+        super().__init__(master)
 
 class Main(CTk.CTk):
     def __init__(self):
@@ -46,7 +46,7 @@ class Main(CTk.CTk):
         self.species = "human"
         self.size = "medium"
         self.background = "acolyte"
-        self.level = 1
+        self.char_level = 1
         self.experience = 0
         self.class_level = [1]
         self.max_hp = 13
@@ -55,12 +55,14 @@ class Main(CTk.CTk):
         self.hit_dice = ["1d12"]
         self.proficiency_bonus = 2
         self.save_proficencies = []
-        self.stats = [15, 14, 13, 12, 10, 8]
+        self.char_stats = [15, 14, 13, 12, 10, 8]
         self.skills = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
         self.feats = ["magic initiate"]
-        self.heroic_insp = True
+        self.caster_stats = ["wis"]
+        self.caster_level = 1
         self.prepared_spells = []
         self.equipment = []
+        self.heroic_insp = True
 
 sheet = Main()
 sheet.mainloop()
