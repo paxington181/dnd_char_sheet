@@ -27,11 +27,11 @@ class feats_frame(CTk.CTkFrame):
         super().__init__(master)
 
 class stat_frame(CTk.CTkFrame):
-    def __init__(self, master, ):
+    def __init__(self, master, char_stats, save_proficencies, skills):
         super().__init__(master)        
 
 class class_frame(CTk.CTkFrame):
-    def __init__(self, master):
+    def __init__(self, master, char_class, char_subclass, species, class_level):
         super().__init__(master)
 
 class Main(CTk.CTk):
